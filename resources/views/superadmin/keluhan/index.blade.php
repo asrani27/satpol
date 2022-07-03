@@ -66,7 +66,7 @@
                                 @elseif ($item->status == 1)
                                 <span class="badge badge-danger">di proses</span>
                                 @else
-                                <span class="badge badge-success">selesai ole {{$item->pegawai == null ?
+                                <span class="badge badge-success">selesai oleh {{$item->pegawai == null ?
                                     '':$item->pegawai->nama}}</span>
                                 @endif
                             </td>
