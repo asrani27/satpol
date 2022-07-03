@@ -56,7 +56,7 @@ class PegawaiController extends Controller
                 return back();
             }
         }
-    }
+    }  
     public function pegawaidelete($id)
     {
         try {

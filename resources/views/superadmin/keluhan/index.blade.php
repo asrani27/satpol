@@ -19,7 +19,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-2">
-                <table id="example1" class="table table-bordered table-striped table-sm">
+                <table id="example1" class="table table-bordered table-sm">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -29,6 +29,9 @@
                             <th>Kelurahan</th>
                             <th>Alamat</th>
                             <th>Isi</th>
+                            <th>Foto Dr Pelapor</th>
+                            <th>Foto Dr Anggota</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -37,7 +40,7 @@
                     @endphp
                     <tbody>
                         @foreach ($data as $key => $item)
-                        <tr>
+                        <tr style="font-size: 12px;">
                             <td>{{$no++}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>{{$item->user->name}}</td>
@@ -46,8 +49,33 @@
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->isi}}</td>
                             <td>
+                                @if ($item->foto_keluhan != null)
+                                <a href="/storage/foto/{{$item->foto_keluhan}}" target="_blank">
+                                    <i class="fa fa-eye"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($item->foto_selesai != null)
+                                <a href="/storage/foto/{{$item->foto_selesai}}" target="_blank">
+                                    <i class="fa fa-eye"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($item->status == 0)
+                                <span class="badge badge-primary">Baru</span>
+                                @elseif ($item->status == 1)
+                                <span class="badge badge-danger">di proses</span>
+                                @else
+                                <span class="badge badge-success">selesai ole {{$item->pegawai == null ?
+                                    '':$item->pegawai->nama}}</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($item->status != 2)
+
                                 <a href="/data/masuk/kirim/{{$item->id}}" class="btn btn-xs btn-success"><i
                                         class="fas fa-paper-plane"></i> Kirim Ke Semua</a>
+                                @endif
                                 <a href="/data/masuk/delete/{{$item->id}}" class="btn btn-xs btn-danger"
                                     onclick="return confirm('yakin Di Hapus?');"><i class="fas fa-trash"></i> Hapus</a>
 

@@ -16,6 +16,11 @@ class Keluhan extends Model
         return $this->belongsTo(Kecamatan::class, 'kecamatan_id');
     }
 
+    public function pegawai()
+    {
+        return $this->belongsTo(Pegawai::class, 'solver');
+    }
+
     public function kelurahan()
     {
         return $this->belongsTo(Kelurahan::class, 'kelurahan_id');

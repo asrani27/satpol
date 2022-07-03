@@ -1,7 +1,7 @@
 <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column text-sm" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-            <a href="/pegawai" class="nav-link {{Request::is('pegawai') ? 'active' : ''}}">
+            <a href="/pegawaisatpol" class="nav-link {{Request::is('pegawaisatpol') ? 'active' : ''}}">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                     BERANDA

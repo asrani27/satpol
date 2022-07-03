@@ -9,7 +9,7 @@ class DataMasukController extends Controller
 {
     public function index()
     {
-        $data = Keluhan::get();
+        $data = Keluhan::orderBy('id', 'DESC')->get();
         return view('superadmin.keluhan.index', compact('data'));
     }
 

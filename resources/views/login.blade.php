@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LAPOR SATPOL</title>
+    <title>SIPANDU BAIMAN</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="text-center">
                                 <img src="/admin/bjm.png" alt="AdminLTE Logo" width="70px"><br />
-                                <h1 style="font-family:'monotype corsiva'; font-weight:bold">Lapor Satpol</h1>
+                                <h1 style="font-family:'monotype corsiva'; font-weight:bold">SIPANDU BAIMAN</h1>
                             </div>
                             <div class="card">
                                 <div class="card-body">

@@ -52,6 +52,8 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
 
 Route::group(['middleware' => ['auth', 'role:pegawai']], function () {
     Route::get('/pegawaisatpol', [BerandaController::class, 'pegawai']);
+    Route::get('/pegawaisatpol/selesaikantugas/{id}', [BerandaController::class, 'finishTask']);
+    Route::post('/pegawaisatpol/selesaikantugas/{id}', [BerandaController::class, 'selesaiTask']);
 });
 
 

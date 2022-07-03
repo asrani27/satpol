@@ -23,7 +23,20 @@
 </div>
 <div class="row">
     <div class="col-12">
-
+        <div class="card">
+            <div class="card-body">
+                <a href="/data/masuk" class="btn btn-app bg-gradient-primary">
+                    <span class="badge bg-danger text-bold">{{$baru}}</span>
+                    <i class="fas fa-bullhorn"></i> KELUHAN
+                </a>
+                <a href="/kategori" class="btn btn-app bg-gradient-primary">
+                    <i class="fas fa-list"></i> KATEGORI
+                </a>
+                <a href="/pegawai" class="btn btn-app bg-gradient-primary">
+                    <i class="fas fa-users"></i> ANGGOTA
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 
