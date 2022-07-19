@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "id.go.banjarmasinkota.sipadu.twa",
+                     "sha256_cert_fingerprints": ["68:11:04:3C:63:02:07:8B:01:81:EA:23:16:F0:67:00:3B:D4:8C:89:B7:52:45:57:B5:51:00:E3:0B:DF:B6:F6"] }
+      }
+]
