@@ -167,6 +167,7 @@ return [
          */
         Yoeunes\Toastr\ToastrServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
+        Ladumor\LaravelPwa\PWAServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
     ],
 
 ];

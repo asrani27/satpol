@@ -20,6 +20,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       background-image: linear-gradient(to right, #0954a9, #0785a9, #4db1a5, #2ba79f);
     }
   </style>
+
+  <!-- PWA  -->
+  <meta name="theme-color" content="#6777ef" />
+  <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+  <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-navbar-fixed">
@@ -109,6 +114,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </ul>
   </nav>
   @include('frontend.js')
+  <script src="{{ asset('/sw.js') }}"></script>
+  <script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+  </script>
 </body>
 
 </html>
