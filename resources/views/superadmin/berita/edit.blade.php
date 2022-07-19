@@ -4,33 +4,39 @@
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endpush
 @section('title')
-TAMBAH SATUAN
+EDIT BERITA
 @endsection
 @section('content')
 <br />
 <div class="row">
     <div class="col-12">
-        <form method="post" action="/kategori/edit/{{$data->id}}">
+        <form method="post" action="/berita/edit/{{$data->id}}" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">DATA KATEGORI</h3>
+                            <h3 class="card-title">EDIT BERITA</h3>
                             <div class="card-tools">
-                                <a href="/kategori" type="button" class="btn bg-gradient-secondary btn-sm">
+                                <a href="/berita" type="button" class="btn bg-gradient-secondary btn-sm">
                                     <i class="fa fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Nama Kategori</label>
+                                <label class="col-sm-2 col-form-label">Judul</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="nama" value="{{$data->nama}}"
+                                    <input type="text" class="form-control" name="judul" value="{{$data->judul}}"
                                         required>
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Gambar</label>
+                                <div class="col-sm-10">
+                                    <input type="file" class="form-control" name="gambar">
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
