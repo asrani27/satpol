@@ -1,14 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\SkpdController;
 use App\Http\Controllers\TokoController;
 use App\Http\Controllers\FuzzyController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SlideController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\KategoriController;
@@ -20,14 +24,33 @@ use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\GantiPasswordController;
 
-Route::get('/', [LoginController::class, 'showlogin'])->name('login');
+Route::get('/', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'showlogin'])->name('login');
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/login', [LoginController::class, 'login']);
+Route::get('/tentangsipadu', [HalamanController::class, 'tentangsipadu']);
+Route::get('/profilsatpol', [HalamanController::class, 'profilsatpol']);
+Route::get('/kontaksatpol', [HalamanController::class, 'kontaksatpol']);
 
 Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/beranda', [BerandaController::class, 'index']);
     Route::post('/beranda/url/update', [BerandaController::class, 'updateurl']);
+
+    Route::get('/slideshow', [SlideController::class, 'index']);
+    Route::get('/slideshow/edit/{id}', [SlideController::class, 'edit']);
+    Route::post('/slideshow/edit/{id}', [SlideController::class, 'update']);
+
+    Route::get('/link', [LinkController::class, 'index']);
+    Route::get('/link/edit/{id}', [LinkController::class, 'edit']);
+    Route::post('/link/edit/{id}', [LinkController::class, 'update']);
+
+    Route::get('/profil', [HalamanController::class, 'profil']);
+    Route::post('/profil', [HalamanController::class, 'updateProfil']);
+    Route::get('/tentang', [HalamanController::class, 'tentang']);
+    Route::post('/tentang', [HalamanController::class, 'updateTentang']);
+    Route::get('/kontak', [HalamanController::class, 'kontak']);
+    Route::post('/kontak', [HalamanController::class, 'updateKontak']);
 
     Route::get('/kategori', [KategoriController::class, 'kategori']);
     Route::get('/kategori/create', [KategoriController::class, 'kategoricreate']);
@@ -35,6 +58,14 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/kategori/edit/{id}', [KategoriController::class, 'kategoriedit']);
     Route::post('/kategori/edit/{id}', [KategoriController::class, 'kategoriupdate']);
     Route::get('/kategori/delete/{id}', [KategoriController::class, 'kategoridelete']);
+
+
+    Route::get('/berita', [BeritaController::class, 'berita']);
+    Route::get('/berita/create', [BeritaController::class, 'beritacreate']);
+    Route::post('/berita/create', [BeritaController::class, 'beritastore']);
+    Route::get('/berita/edit/{id}', [BeritaController::class, 'beritaedit']);
+    Route::post('/berita/edit/{id}', [BeritaController::class, 'beritaupdate']);
+    Route::get('/berita/delete/{id}', [BeritaController::class, 'beritadelete']);
 
     Route::get('/pegawai', [PegawaiController::class, 'pegawai']);
     Route::get('/pegawai/create', [PegawaiController::class, 'pegawaicreate']);

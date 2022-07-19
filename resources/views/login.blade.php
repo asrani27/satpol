@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPANDU BAIMAN</title>
+    <title>SIPADU BAIMAN</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
@@ -82,10 +82,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                         <div class="form-group">
                                             <button type="submit"
-                                                class="btn bg-gradient-secondary btn-block">MASUK</button><br />
+                                                class="btn bg-gradient-secondary btn-block">MASUK</button>
+                                            <a href="/" class="btn btn-default btn-block">KE HOME</a><br />
                                             <a href="/register" class="text-sm">Belum Punya Akun? Daftar</a><br />
-                                            <a href="#" class="text-sm">Lupa
-                                                Password?</a>
+                                            {{-- <a href="#" class="text-sm">Lupa
+                                                Password?</a> --}}
                                         </div>
                                 </div>
                                 </form>

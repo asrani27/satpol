@@ -9,6 +9,22 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="/slideshow" class="nav-link {{Request::is('slideshow*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    SLIDESHOW
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/link" class="nav-link {{Request::is('link*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    LINK
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/kategori" class="nav-link {{Request::is('kategori*') ? 'active' : ''}}">
                 <i class="nav-icon fa fa-list"></i>
                 <p>
@@ -34,6 +50,38 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a href="/berita" class="nav-link {{Request::is('berita*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    BERITA
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/profil" class="nav-link {{Request::is('profil*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    PROFIL
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/tentang" class="nav-link {{Request::is('tentang*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    TENTANG APP
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/kontak" class="nav-link {{Request::is('kontak*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    KONTAK
+                </p>
+            </a>
+        </li>
         <li class="nav-item">
             <a href="/gantipassword" class="nav-link {{Request::is('gantipassword*') ? 'active' : ''}}">
                 <i class="nav-icon fa fa-list"></i>

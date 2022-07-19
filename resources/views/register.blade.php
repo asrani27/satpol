@@ -103,10 +103,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                         <div class="form-group">
                                             <button type="submit"
-                                                class="btn bg-gradient-secondary btn-block">DAFTAR</button><br />
-                                            <a href="/" class="text-sm">Punya Akun? Login</a><br />
-                                            <a href="#" class="text-sm">Lupa
-                                                Password?</a>
+                                                class="btn bg-gradient-secondary btn-block">DAFTAR</button>
+                                            <a href="/" class="btn btn-default btn-block">KE HOME</a><br />
+                                            <a href="/login" class="text-sm">Punya Akun? Login</a><br />
+                                            {{-- <a href="#" class="text-sm">Lupa
+                                                Password?</a> --}}
                                         </div>
                                 </div>
                                 </form>
