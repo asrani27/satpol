@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Link;
 use App\Models\Slide;
 use App\Models\Berita;
+use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,6 +14,13 @@ class LoginController extends Controller
 
     public function index()
     {
+        //detect device 
+        $agent = new Agent;
+
+        if ($agent->isDesktop()) {
+            return redirect('/login');
+        }
+
         $slide = Slide::get();
         $website = Link::where('nama', 'website')->first()->link;
         $jdih = Link::where('nama', 'jdih')->first()->link;
