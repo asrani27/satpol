@@ -48,19 +48,19 @@
         <a href="{{$website}}" target="_blank" class="btn btn-app bg-gradient-info">
             <i class="fas fa-blog"></i> WEBSITE
         </a>
-        <a href="{{$jdih}}" class="btn btn-app bg-gradient-info">
+        <a href="{{$jdih}}" target="_blank" class="btn btn-app bg-gradient-info">
             <i class="fas fa-file"></i> JDIH
         </a>
         <a href="/profilsatpol" class="btn btn-app bg-gradient-info">
             <i class="fas fa-building"></i> PROFIL
         </a>
-        <a href="{{$ppid}}" class="btn btn-app bg-gradient-info">
+        <a href="{{$ppid}}" target="_blank" class="btn btn-app bg-gradient-info">
             <i class="fas fa-newspaper"></i> PPID
         </a>
         <a href="/kontaksatpol" class="btn btn-app bg-gradient-info">
             <i class="fas fa-phone"></i> KONTAK
         </a>
-        <a href="{{$elapor}}" class="btn btn-app bg-gradient-info">
+        <a href="{{$elapor}}" target="_blank" class="btn btn-app bg-gradient-info">
             <i class="fas fa-mitten"></i> E-LAPOR
         </a>
         <a href="{{$instagram}}" class="btn btn-app bg-danger">
@@ -69,7 +69,7 @@
         <a href="{{$whatsapp}}" class="btn btn-app bg-success">
             <ion-icon name="logo-whatsapp" size="small"></ion-icon><br />WHATSAPP
         </a>
-        <a href="{{$facebook}}" class="btn btn-app bg-primary">
+        <a href="{{$facebook}}" target="_blank" class="btn btn-app bg-primary">
             <ion-icon name="logo-facebook" size="small"></ion-icon><br />FACEBOOK
         </a>
     </div>
