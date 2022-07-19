@@ -45,7 +45,7 @@
 <br />
 <div class="row">
     <div class="col-md-12 text-center">
-        <a href="{{$website}}" class="btn btn-app bg-gradient-info">
+        <a href="{{$website}}" target="_blank" class="btn btn-app bg-gradient-info">
             <i class="fas fa-blog"></i> WEBSITE
         </a>
         <a href="{{$jdih}}" class="btn btn-app bg-gradient-info">
