@@ -42,9 +42,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item">
-
-            <img src="/admin/sipadu2.png" alt="Baiman" width="200px">
-            {{-- <a href="#" class="nav-link text-white">SIPADU
+            <img src="/admin/sipadu3.png" alt="Baiman" width="40px"> <span style="font-size: 20px;">SIPADU BAIMAN</span>
+            {{--
+            <a href="#" class="nav-link text-white">SIPADU
               BAIMAN</a> --}}
           </li>
         </ul>

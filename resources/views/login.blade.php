@@ -63,7 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-lg-4">
 
                             <div class="text-center">
-                                <img src="/admin/baiman.png" alt="Baiman" width="80px"><br />
+                                <img src="/admin/sipadu3.png" alt="Baiman" width="80px"><br />
                                 <h1 style="font-family:'monotype corsiva'; font-weight:bold">SIPADU BAIMAN</h1>
                             </div>
                             <div class="card">
