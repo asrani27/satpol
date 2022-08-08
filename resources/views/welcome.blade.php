@@ -72,7 +72,7 @@
         <a href="{{$facebook}}" target="_blank" class="btn btn-app bg-primary">
             <ion-icon name="logo-facebook" size="small"></ion-icon><br />FACEBOOK
         </a>
-        <a href="{{$tiktok}}" class="btn btn-app bg-secondary">
+        <a href="{{$tiktok}}" target="_blank" class="btn btn-app bg-secondary">
             <ion-icon name="logo-tiktok" size="small"></ion-icon><br />TIKTOK
         </a>
         <a href="{{$youtube}}" class="btn btn-app bg-secondary">
