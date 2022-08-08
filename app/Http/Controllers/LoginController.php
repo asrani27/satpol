@@ -30,7 +30,9 @@ class LoginController extends Controller
         $instagram = Link::where('nama', 'instagram')->first()->link;
         $facebook = Link::where('nama', 'facebook')->first()->link;
         $berita = Berita::orderBy('id', 'DESC')->take(3)->get();
-        return view('welcome', compact('slide', 'website', 'jdih', 'ppid', 'elapor', 'whatsapp', 'instagram', 'facebook', 'berita'));
+        $youtube = 'https://youtube.com/channel/UCuMqJBtKfWLiA2A4lkgF_uw';
+        $tiktok = 'https://vt.tiktok.com/ZSRefvNEw/';
+        return view('welcome', compact('youtube', 'tiktok', 'slide', 'website', 'jdih', 'ppid', 'elapor', 'whatsapp', 'instagram', 'facebook', 'berita'));
     }
     public function showlogin()
     {
