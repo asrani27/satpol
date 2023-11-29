@@ -16,6 +16,10 @@ class ApiController extends Controller
         return response()->json($data);
     }
 
+    public function checkkeluhan()
+    {
+
+    }
     public function storekeluhan(Request $req)
     {
         $n = new KeluhanWA;
@@ -23,7 +27,7 @@ class ApiController extends Controller
         $n->isi = $req->isi;
         $n->save();
 
-        $pesan = 'Terima Kasih Telah memberikan laporan, berikut ini no keluhan anda : SIPADU' . $n->id;
+        $pesan = 'Terima Kasih Telah memberikan laporan, berikut ini no keluhan anda : *SIPADU*' . $n->id;
         return response()->json($pesan);
     }
 }
