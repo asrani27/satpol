@@ -13,8 +13,7 @@
             <div class="card-header">
                 <h3 class="card-title">DATA KELUHAN VIA BOT WA</h3>
                 <div class="card-tools">
-                    <a href="/pegawai/create" type="button" class="btn bg-gradient-secondary btn-sm">
-                        <i class="fa fa-plus"></i> TAMBAH</a>
+                    
                 </div>
             </div>
             <!-- /.card-header -->
