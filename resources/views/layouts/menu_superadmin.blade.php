@@ -51,6 +51,15 @@
         </li>
 
         <li class="nav-item">
+            <a href="/data/keluhanwa" class="nav-link {{Request::is('data/keluhanwa*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    KELUHAN WA BOT
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a href="/berita" class="nav-link {{Request::is('berita*') ? 'active' : ''}}">
                 <i class="nav-icon fa fa-list"></i>
                 <p>

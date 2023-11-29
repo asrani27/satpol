@@ -37,12 +37,18 @@ class ApiController extends Controller
     }
     public function storekeluhan(Request $req)
     {
-        $n = new KeluhanWA;
-        $n->tanggal = Carbon::now()->format('Y-m-d');
-        $n->isi = $req->isi;
-        $n->save();
+        $convert = json_encode($req->isi);
+        //return response()->json($convert);
+        try {
+            $n = new KeluhanWA;
+            $n->tanggal = Carbon::now()->format('Y-m-d');
+            $n->isi = $convert;
+            $n->save();
 
-        $pesan = 'Terima Kasih Telah memberikan laporan, berikut ini no keluhan anda : *SIPADU*' . $n->id;
-        return response()->json($pesan);
+            $pesan = 'Terima Kasih Telah memberikan laporan, berikut ini no keluhan anda : *SIPADU*' . $n->id;
+            return response()->json($pesan);
+        } catch (\Exception $e) {
+            return response()->json($e);
+        }
     }
 }
