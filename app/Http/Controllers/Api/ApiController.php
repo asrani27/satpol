@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\KategoriKeluhan;
 use App\Http\Controllers\Controller;
+use App\Models\LaporanAnggota;
 
 class ApiController extends Controller
 {
@@ -17,6 +18,19 @@ class ApiController extends Controller
         return response()->json($data);
     }
 
+    public function storeLaporanAnggota(Request $req)
+    {
+
+        $n = new LaporanAnggota;
+        $n->nik = $req->isi['nik'];
+        $n->rincian = $req->isi['rincian'];
+        $n->alamat = $req->isi['alamat'];
+        $n->foto = $req->isi['foto'];
+        $n->save();
+
+        $pesan = 'Laporan telah disimpan';
+        return response()->json($pesan);
+    }
     public function checkkeluhan($nomor)
     {
         try {
