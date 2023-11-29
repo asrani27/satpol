@@ -45,7 +45,7 @@ class ApiController extends Controller
             $n->isi = $convert;
             $n->save();
 
-            $pesan = 'Terima Kasih Telah memberikan laporan, berikut ini no keluhan anda : *SIPADU*' . $n->id;
+            $pesan = 'Terima Kasih Telah memberikan laporan, berikut ini no keluhan anda : *SIPADU' . $n->id . '*';
             return response()->json($pesan);
         } catch (\Exception $e) {
             return response()->json($e);
