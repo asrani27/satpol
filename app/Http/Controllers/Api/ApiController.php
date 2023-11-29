@@ -34,7 +34,9 @@ class ApiController extends Controller
             if ($data->status = 2) {
                 $param['status'] = 'Selesai';
             }
-            return response()->json($param);
+
+            $pesan = 'Nomor keluhan ' . $nomor . ' atas nama ' . json_decode($data->isi)->name . ' dengan keluhan ' . json_decode($data->isi)->complaint  . ' berstatus ' .  strtoupper($param['status']);
+            return response()->json($pesan);
         } catch (\Exception $e) {
             $pesan = 'nomor tidak ditemukan';
             return response()->json($pesan);
