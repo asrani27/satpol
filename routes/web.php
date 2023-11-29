@@ -80,6 +80,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
 
     Route::get('/data/masuk', [DataMasukController::class, 'index']);
     Route::get('/data/keluhanwa', [KeluhanController::class, 'keluhanwa']);
+    Route::get('/data/keluhanwa/delete/{id}', [KeluhanController::class, 'delete']);
 
     Route::get('/data/masuk/kirim/{id}', [DataMasukController::class, 'kirim']);
     Route::get('/data/masuk/delete/{id}', [DataMasukController::class, 'delete']);

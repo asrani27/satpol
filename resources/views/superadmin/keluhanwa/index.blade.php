@@ -39,7 +39,31 @@
                             <td>{{$no++}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>SIPADU{{$item->id}}</td>
-                            <td>{{$item->isi}}</td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>Nama</td>
+                                        <td>{{$item->nama}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kecamatan</td>
+                                        <td>{{$item->kecamatan}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kelurahan</td>
+                                        <td>{{$item->kelurahan}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kategori</td>
+                                        <td>{{$item->kategori}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Isi</td>
+                                        <td>{{$item->keluhan}}</td>
+                                    </tr>
+                                </table>
+
+                            </td>
                             <td>
                                 @if ($item->status == 0)
                                 <span class="badge badge-primary">Baru</span>
@@ -56,9 +80,9 @@
 
                                 <a href="/data/masuk/kirim/{{$item->id}}" class="btn btn-xs btn-success"><i
                                         class="fas fa-paper-plane"></i> Kirim Ke Semua</a>
-                                @endif
-                                <a href="/data/masuk/delete/{{$item->id}}" class="btn btn-xs btn-danger"
-                                    onclick="return confirm('yakin Di Hapus?');"><i class="fas fa-trash"></i> Hapus</a> --}}
+                                @endif --}}
+                                <a href="/data/keluhanwa/delete/{{$item->id}}" class="btn btn-xs btn-danger"
+                                    onclick="return confirm('yakin Di Hapus?');"><i class="fas fa-trash"></i> Hapus</a> 
 
                             </td>
                         </tr>
