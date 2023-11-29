@@ -11,7 +11,7 @@
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title">DATA PEGAWAI</h3>
+                <h3 class="card-title">DATA KELUHAN VIA BOT WA</h3>
                 <div class="card-tools">
                     <a href="/pegawai/create" type="button" class="btn bg-gradient-secondary btn-sm">
                         <i class="fa fa-plus"></i> TAMBAH</a>
@@ -59,7 +59,7 @@
                                     </tr>
                                     <tr>
                                         <td>Isi</td>
-                                        <td>{{$item->keluhan}}</td>
+                                        <td>{{$item->isikeluhan}}</td>
                                     </tr>
                                 </table>
 
