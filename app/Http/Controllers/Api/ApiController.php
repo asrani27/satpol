@@ -19,21 +19,26 @@ class ApiController extends Controller
 
     public function checkkeluhan($nomor)
     {
-        $nomor_id = Str::replace('sipadu', '', $nomor);
-        $data = KeluhanWA::find($nomor_id);
+        try {
+            $nomor_id = Str::replace('sipadu', '', $nomor);
+            $data = KeluhanWA::find($nomor_id);
 
-        $param['nomorkeluhan'] = $nomor;
-        $param['isi'] = json_decode($data->isi);
-        if ($data->status = 0) {
-            $param['status'] = 'Belum diproses';
+            $param['nomorkeluhan'] = $nomor;
+            $param['isi'] = json_decode($data->isi);
+            if ($data->status = 0) {
+                $param['status'] = 'Belum diproses';
+            }
+            if ($data->status = 1) {
+                $param['status'] = 'Siproses';
+            }
+            if ($data->status = 2) {
+                $param['status'] = 'Selesai';
+            }
+            return response()->json($param);
+        } catch (\Exception $e) {
+            $pesan = 'nomor tidak ditemukan';
+            return response()->json($pesan);
         }
-        if ($data->status = 1) {
-            $param['status'] = 'Siproses';
-        }
-        if ($data->status = 2) {
-            $param['status'] = 'Selesai';
-        }
-        return response()->json($param);
     }
     public function storekeluhan(Request $req)
     {

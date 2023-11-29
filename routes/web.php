@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Keluhan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\SkpdController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\HalamanController;
+use App\Http\Controllers\KeluhanController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\KategoriController;
@@ -77,6 +79,8 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/pegawai/reset/{id}', [PegawaiController::class, 'pegawaireset']);
 
     Route::get('/data/masuk', [DataMasukController::class, 'index']);
+    Route::get('/data/keluhanwa', [KeluhanController::class, 'keluhanwa']);
+
     Route::get('/data/masuk/kirim/{id}', [DataMasukController::class, 'kirim']);
     Route::get('/data/masuk/delete/{id}', [DataMasukController::class, 'delete']);
 });
