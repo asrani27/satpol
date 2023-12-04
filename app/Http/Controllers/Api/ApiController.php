@@ -39,13 +39,13 @@ class ApiController extends Controller
 
             $param['nomorkeluhan'] = $nomor;
             $param['isi'] = json_decode($data->isi);
-            if ($data->status = 0) {
+            if ($data->status == 0) {
                 $param['status'] = 'Belum diproses';
             }
-            if ($data->status = 1) {
+            if ($data->status == 1) {
                 $param['status'] = 'Siproses';
             }
-            if ($data->status = 2) {
+            if ($data->status == 2) {
                 $param['status'] = 'Selesai';
             }
 
