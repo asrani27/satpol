@@ -92,6 +92,14 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="/laporan" class="nav-link {{Request::is('laporan*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    LAPORAN
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/gantipassword" class="nav-link {{Request::is('gantipassword*') ? 'active' : ''}}">
                 <i class="nav-icon fa fa-list"></i>
                 <p>

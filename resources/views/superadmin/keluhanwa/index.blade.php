@@ -80,9 +80,22 @@
                                 <a href="/data/masuk/kirim/{{$item->id}}" class="btn btn-xs btn-success"><i
                                         class="fas fa-paper-plane"></i> Kirim Ke Semua</a>
                                 @endif --}}
-                                <a href="/data/keluhanwa/delete/{{$item->id}}" class="btn btn-xs btn-danger"
-                                    onclick="return confirm('yakin Di Hapus?');"><i class="fas fa-trash"></i> Hapus</a> 
-
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-success"><i class="fas fa-cog"></i>  Aksi</button>
+                                        <button type="button" class="btn btn-sm btn-success dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                          <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu" style="">
+                                            <a class="dropdown-item btn-xs" href="#"><i class="fas fa-comments"></i> Kirim Ke Petugas</a>
+                                          <div class="dropdown-divider"></div>
+                                          <a class="dropdown-item btn-xs" href="#"><strong>Ubah Status :</strong></a>
+                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusbaru/{{$item->id}}" onclick="return confirm('yakin di ubah menjadi Baru?');"><i class="fas fa-arrow-right"></i> Baru</a>
+                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusdiproses/{{$item->id}}" onclick="return confirm('yakin di ubah menjadi DiProses?');"><i class="fas fa-arrow-right"></i> Diproses</a>
+                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusselesai/{{$item->id}}" onclick="return confirm('yakin di ubah menjadi Selesai?');"><i class="fas fa-arrow-right"></i> Selesai</a>
+                                          <div class="dropdown-divider"></div>
+                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/delete/{{$item->id}}" onclick="return confirm('yakin Di Hapus?');"><i class="fas fa-trash"></i> Hapus</a>
+                                        </div>
+                                      </div>
                             </td>
                         </tr>
                         @endforeach

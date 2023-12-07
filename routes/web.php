@@ -25,6 +25,7 @@ use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\GantiPasswordController;
+use App\Http\Controllers\LaporanController;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/login', [LoginController::class, 'showlogin'])->name('login');
@@ -79,8 +80,12 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/pegawai/reset/{id}', [PegawaiController::class, 'pegawaireset']);
 
     Route::get('/data/masuk', [DataMasukController::class, 'index']);
+    Route::get('/laporan', [LaporanController::class, 'index']);
     Route::get('/data/keluhanwa', [KeluhanController::class, 'keluhanwa']);
     Route::get('/data/keluhanwa/delete/{id}', [KeluhanController::class, 'delete']);
+    Route::get('/data/keluhanwa/ubahstatusbaru/{id}', [KeluhanController::class, 'baru']);
+    Route::get('/data/keluhanwa/ubahstatusdiproses/{id}', [KeluhanController::class, 'diproses']);
+    Route::get('/data/keluhanwa/ubahstatusselesai/{id}', [KeluhanController::class, 'selesai']);
 
     Route::get('/data/masuk/kirim/{id}', [DataMasukController::class, 'kirim']);
     Route::get('/data/masuk/delete/{id}', [DataMasukController::class, 'delete']);
