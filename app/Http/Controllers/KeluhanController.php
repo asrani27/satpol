@@ -77,6 +77,10 @@ class KeluhanController extends Controller
     {
 
         $find = KeluhanWA::find($id);
+        if ($find->file == null) {
+            toastr()->error('Harap Upload Bukti Dukung penyelesaian keluhan');
+            return back();
+        }
         $sender = json_decode($find->isi);
         if (isset($sender->sender) == true) {
             $nomor = $sender->sender->from;
@@ -95,7 +99,7 @@ class KeluhanController extends Controller
                 "phoneNumber" => $nomor,
                 "content" => [
                     "text" => Carbon::now()->translatedFormat('d F Y') .
-                        " SIPADU, KELUHAN ANDA, \n Nama : " . $pesan->name . " \n Keluhan : " . $pesan->complaint . " \n Sudah Selesai, \n Foto : https://sipadu.banjarmasinkota.go.id/storage/foto/" . $pesan->file,
+                        " SIPADU, KELUHAN ANDA, \n Nama : " . $pesan->name . " \n Keluhan : " . $pesan->complaint . " \n Sudah Selesai, \n Foto : https://sipadu.banjarmasinkota.go.id/storage/foto/" . $find->file,
                 ]
             ];
 
