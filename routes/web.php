@@ -29,6 +29,7 @@ use App\Http\Controllers\LaporanAnggotaController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NomorController;
 use App\Http\Controllers\PengamananController;
+use App\Http\Controllers\WAcontroller;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/login', [LoginController::class, 'showlogin'])->name('login');
@@ -72,6 +73,9 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/berita/edit/{id}', [BeritaController::class, 'beritaedit']);
     Route::post('/berita/edit/{id}', [BeritaController::class, 'beritaupdate']);
     Route::get('/berita/delete/{id}', [BeritaController::class, 'beritadelete']);
+
+
+    Route::get('/kirimkeatasan/{id}', [WAcontroller::class, 'keatasan']);
 
     Route::get('/nomor', [NomorController::class, 'index']);
     Route::get('/nomor/create', [NomorController::class, 'create']);
