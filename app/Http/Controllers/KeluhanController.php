@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KeluhanWA;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class KeluhanController extends Controller
 {
@@ -12,6 +13,29 @@ class KeluhanController extends Controller
     {
         KeluhanWA::find($id)->update(['status' => 0]);
         toastr()->success('Berhasil diubah');
+        return back();
+    }
+    public function uploadbukti(Request $req)
+    {
+        $validator = Validator::make($req->all(), [
+            'file' => 'mimes:jpg,jpeg,png|max:2048'
+        ]);
+
+        if ($validator->fails()) {
+            toastr()->error('File Harus Berupa JPG max 2MB');
+            return back();
+        }
+
+        if ($req->hasFile('file')) {
+            $filename = $req->file->getClientOriginalName();
+            $filename = date('d-m-Y-') . rand(1, 9999) . $filename;
+            $req->file->storeAs('/public/foto', $filename);
+        } else {
+            $filename = KeluhanWA::find($req->id_keluhan)->file;
+        }
+
+        KeluhanWA::find($req->id_keluhan)->update(['file' => $filename]);
+        toastr()->success('Berhasil diupload');
         return back();
     }
     public function diproses($id)

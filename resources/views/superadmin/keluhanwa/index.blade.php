@@ -76,6 +76,9 @@
                                 @endif
                             </td>
                             <td>
+                                @if ($item->file != null)
+                                    <img src="/storage/foto/{{$item->file}}" width="100px"><br/>
+                                @endif
                                 <a href="#" class="btn btn-xs btn-primary upload-bukti" data-id="{{$item->id}}"><i class="fa fa-upload"></i> Upload bukti</a>
                             </td>
                             <td>
@@ -119,7 +122,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form method="post" action="/data/keluhanwa/uploadbukti">
+        <form method="post" action="/data/keluhanwa/uploadbukti" enctype="multipart/form-data">
         <div class="modal-body">
             @csrf
             <div class="form-group">
