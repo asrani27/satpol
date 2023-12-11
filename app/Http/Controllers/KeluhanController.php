@@ -40,9 +40,36 @@ class KeluhanController extends Controller
     }
     public function diproses($id)
     {
+
+        $find = KeluhanWA::find($id);
+        $sender = json_decode($find->isi);
+        if (isset($sender->sender) == true) {
+            $nomor = $sender->sender->from;
+        } else {
+            $nomor = null;
+        }
+
         KeluhanWA::find($id)->update(['status' => 1]);
-        toastr()->success('Berhasil diubah');
-        return back();
+        $pesan = json_decode($find->isi);
+        if ($nomor == null) {
+            toastr()->success('Berhasil diubah,namun nomor pelapor tidak ditemukan, tidak bisa mengirim notif');
+            return back();
+        } else {
+            $data = [
+                "phoneNumber" => $nomor,
+                "content" => [
+                    "text" => Carbon::now()->translatedFormat('d F Y') .
+                        " SIPADU, KELUHAN ANDA, \n Nama : " . $pesan->nama . " \n Keluhan : " . $pesan->complaint . " \n Sedang Diproses",
+                ]
+            ];
+
+            $response = Http::withBody(json_encode($data), 'application/json')
+                ->post('https://bot.sipadu.banjarmasinkota.go.id/message');
+            sleep(5);
+
+            toastr()->success('Berhasil diubah');
+            return back();
+        }
     }
     public function selesai($id)
     {
