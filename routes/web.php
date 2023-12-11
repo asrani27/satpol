@@ -26,6 +26,7 @@ use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\GantiPasswordController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\NomorController;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/login', [LoginController::class, 'showlogin'])->name('login');
@@ -69,6 +70,13 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/berita/edit/{id}', [BeritaController::class, 'beritaedit']);
     Route::post('/berita/edit/{id}', [BeritaController::class, 'beritaupdate']);
     Route::get('/berita/delete/{id}', [BeritaController::class, 'beritadelete']);
+
+    Route::get('/nomor', [NomorController::class, 'index']);
+    Route::get('/nomor/create', [NomorController::class, 'create']);
+    Route::post('/nomor/create', [NomorController::class, 'store']);
+    Route::get('/nomor/edit/{id}', [NomorController::class, 'edit']);
+    Route::post('/nomor/edit/{id}', [NomorController::class, 'update']);
+    Route::get('/nomor/delete/{id}', [NomorController::class, 'delete']);
 
     Route::get('/pegawai', [PegawaiController::class, 'pegawai']);
     Route::get('/pegawai/create', [PegawaiController::class, 'pegawaicreate']);

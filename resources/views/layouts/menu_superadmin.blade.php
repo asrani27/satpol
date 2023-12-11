@@ -58,6 +58,14 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/nomor" class="nav-link {{Request::is('nomor*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                    NOMOR WA ATASAN
+                </p>
+            </a>
+        </li>
 
         <li class="nav-item">
             <a href="/berita" class="nav-link {{Request::is('berita*') ? 'active' : ''}}">
