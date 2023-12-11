@@ -74,6 +74,14 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/laporananggota" class="nav-link {{Request::is('laporananggota*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                   LAPORAN AGGOTA
+                </p>
+            </a>
+        </li>
 
         <li class="nav-item">
             <a href="/berita" class="nav-link {{Request::is('berita*') ? 'active' : ''}}">

@@ -25,6 +25,7 @@ use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\GantiPasswordController;
+use App\Http\Controllers\LaporanAnggotaController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NomorController;
 use App\Http\Controllers\PengamananController;
@@ -94,6 +95,8 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/pegawai/delete/{id}', [PegawaiController::class, 'pegawaidelete']);
     Route::get('/pegawai/akun/{id}', [PegawaiController::class, 'pegawaiakun']);
     Route::get('/pegawai/reset/{id}', [PegawaiController::class, 'pegawaireset']);
+
+    Route::get('/laporananggota', [LaporanAnggotaController::class, 'index']);
 
     Route::get('/data/masuk', [DataMasukController::class, 'index']);
     Route::get('/laporan', [LaporanController::class, 'index']);
