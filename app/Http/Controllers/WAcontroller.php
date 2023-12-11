@@ -14,7 +14,7 @@ class WAcontroller extends Controller
     {
         $nomor = NomorWA::get();
         $pesan = format_pesan(KeluhanWA::where('id', $id)->get())->first();
-        dd($nomor, $pesan);
+
         foreach ($nomor as $n) {
             $data = [
                 "phoneNumber" => $n->nama,
