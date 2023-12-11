@@ -17,7 +17,7 @@ class LaporanAnggotaController extends Controller
         return view('superadmin.laporananggota.index', compact('data'));
     }
 
-    public function index($id)
+    public function delete($id)
     {
         try {
             LaporanAnggota::find($id)->delete();
