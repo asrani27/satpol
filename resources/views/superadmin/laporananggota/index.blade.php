@@ -45,14 +45,14 @@
                             <td>{{$item->rincian}}</td>
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->foto}}</td>
-                            {{-- <td>
+                            <td>
 
-                                <a href="/pengamanan/edit/{{$item->id}}" class="btn btn-xs btn-success"><i
-                                        class="fas fa-edit"></i> Edit</a>
-                                <a href="/pengamanan/delete/{{$item->id}}" class="btn btn-xs btn-danger"
+                                {{-- <a href="/pengamanan/edit/{{$item->id}}" class="btn btn-xs btn-success"><i
+                                        class="fas fa-edit"></i> Edit</a> --}}
+                                <a href="/laporananggota/delete/{{$item->id}}" class="btn btn-xs btn-danger"
                                     onclick="return confirm('yakin Di Hapus?');"><i class="fas fa-trash"></i> Hapus</a>
 
-                            </td> --}}
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
