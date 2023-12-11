@@ -26,6 +26,7 @@
                             <th>Nomor</th>
                             <th>Isi</th>
                             <th>Status</th>
+                            <th>Bukti Dukung</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -75,6 +76,9 @@
                                 @endif
                             </td>
                             <td>
+                                <a href="#" class="btn btn-xs btn-primary upload-bukti" data-id="{{$item->id}}"><i class="fa fa-upload"></i> Upload bukti</a>
+                            </td>
+                            <td>
                                 {{-- @if ($item->status != 2)
 
                                 <a href="/data/masuk/kirim/{{$item->id}}" class="btn btn-xs btn-success"><i
@@ -106,7 +110,62 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="modal-upload">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h4 class="modal-title">Upload Bukti</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post" action="/data/keluhanwa/uploadbukti">
+        <div class="modal-body">
+            @csrf
+            <div class="form-group">
+                <label>Upload</label>
+                <input type="file" id="file" class="form-control" name="file" required>
+                <input type="hidden" id="id_keluhan" class="form-control" name="id_keluhan" readonly>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-grey pull-left" data-dismiss="modal"><i class="fa fa-sign-out"></i> Close</button>
+          <button type="submit" class="btn bg-purple"><i class="fa fa-save"></i> Simpan</button>
+        </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
 
+<div class="modal fade" id="modal-upload">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-default">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title"><i class="ion ion-clipboard"></i> Upload Bukti</h4>
+        </div>
+        <form method="post" action="/data/keluhanwa/uploadbukti">
+        <div class="modal-body">
+            @csrf
+            <div class="form-group">
+                <label>Upload</label>
+                <input type="file" id="file" class="form-control" name="file" required>
+                <input type="text" id="id_keluhan" class="form-control" name="id_keluhan" readonly>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-grey pull-left" data-dismiss="modal"><i class="fa fa-sign-out"></i> Close</button>
+          <button type="submit" class="btn bg-purple"><i class="fa fa-save"></i> Simpan</button>
+        </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
 @endsection
 
 @push('js')
@@ -124,6 +183,13 @@
 <script src="/admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<script>
+    $(document).on('click', '.upload-bukti', function() {
+    $('#id_keluhan').val($(this).data('id'));
+    $("#modal-upload").modal();
+  });
+  </script>
 <script>
     $(function () {
       $("#example1").DataTable({
