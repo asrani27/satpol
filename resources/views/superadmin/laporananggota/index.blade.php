@@ -44,7 +44,7 @@
                             <td>{{$item->pengirim}}</td>
                             <td>{{$item->rincian}}</td>
                             <td>{{$item->alamat}}</td>
-                            <td>{{$item->foto}}</td>
+                            <td><img src="{{$item->foto}}" width="150px"></td>
                             <td>
 
                                 {{-- <a href="/pengamanan/edit/{{$item->id}}" class="btn btn-xs btn-success"><i
