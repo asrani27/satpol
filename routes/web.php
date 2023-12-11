@@ -97,6 +97,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/pegawai/reset/{id}', [PegawaiController::class, 'pegawaireset']);
 
     Route::get('/laporananggota', [LaporanAnggotaController::class, 'index']);
+    Route::get('/laporananggota/delete/{id}', [LaporanAnggotaController::class, 'delete']);
 
     Route::get('/data/masuk', [DataMasukController::class, 'index']);
     Route::get('/laporan', [LaporanController::class, 'index']);

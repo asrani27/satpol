@@ -16,4 +16,16 @@ class LaporanAnggotaController extends Controller
         });
         return view('superadmin.laporananggota.index', compact('data'));
     }
+
+    public function index($id)
+    {
+        try {
+            LaporanAnggota::find($id)->delete();
+            toastr()->success('Berhasil dihapus');
+            return back();
+        } catch (\Exception $e) {
+            toastr()->error('Tidak bisa di hapus karena ada relasi dengan data lain');
+            return back();
+        }
+    }
 }
