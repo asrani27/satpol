@@ -102,8 +102,8 @@
                                           <div class="dropdown-divider"></div>
                                           <a class="dropdown-item btn-xs" href="#"><strong>Ubah Status :</strong></a>
                                           <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusbaru/{{$item->id}}" onclick="return confirm('yakin di ubah menjadi Baru?');"><i class="fas fa-arrow-right"></i> Baru</a>
-                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusdiproses/{{$item->id}}" onclick="return confirm('yakin di ubah menjadi DiProses?');"><i class="fas fa-arrow-right"></i> Diproses</a>
-                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusselesai/{{$item->id}}" onclick="return confirm('yakin di ubah menjadi Selesai?');"><i class="fas fa-arrow-right"></i> Selesai</a>
+                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusdiproses/{{$item->id}}" onclick="return confirm('Mengubah menjadi diproses, akan memberikan notif ke pengirim?');"><i class="fas fa-arrow-right"></i> Diproses</a>
+                                          <a class="dropdown-item btn-xs" href="/data/keluhanwa/ubahstatusselesai/{{$item->id}}" onclick="return confirm('Mengubah menjadi selesai, akan memberikan notif ke pengirim?');"><i class="fas fa-arrow-right"></i> Selesai</a>
                                           <div class="dropdown-divider"></div>
                                           <a class="dropdown-item btn-xs" href="/data/keluhanwa/delete/{{$item->id}}" onclick="return confirm('yakin Di Hapus?');"><i class="fas fa-trash"></i> Hapus</a>
                                         </div>
