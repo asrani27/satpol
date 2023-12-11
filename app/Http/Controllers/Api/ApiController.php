@@ -20,12 +20,11 @@ class ApiController extends Controller
 
     public function storeLaporanAnggota(Request $req)
     {
-
         $n = new LaporanAnggota;
-        $n->nik = $req->isi['nik'];
-        $n->rincian = $req->isi['rincian'];
-        $n->alamat = $req->isi['alamat'];
-        $n->foto = $req->isi['foto'];
+        $n->nik = $req->nik;
+        $n->rincian = $req->rincian;
+        $n->alamat = $req->alamat;
+        $n->foto = $req->foto;
         $n->save();
 
         $pesan = 'Laporan telah disimpan';
