@@ -30,6 +30,7 @@ class ApiController extends Controller
             $n->rincian = $req->rincian;
             $n->alamat = $req->alamat;
             $n->foto = $req->foto;
+            $n->pengirim = $req->pengirim;
             $n->save();
 
             $pesan = 'Laporan telah disimpan';
