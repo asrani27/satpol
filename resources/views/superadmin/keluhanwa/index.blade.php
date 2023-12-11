@@ -61,6 +61,10 @@
                                         <td>Isi</td>
                                         <td>{{$item->isikeluhan}}</td>
                                     </tr>
+                                    <tr>
+                                        <td>Nomor Pengirim</td>
+                                        <td>{{$item->pengirim}}</td>
+                                    </tr>
                                 </table>
 
                             </td>

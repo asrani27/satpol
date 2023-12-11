@@ -90,6 +90,11 @@ class KeluhanController extends Controller
             } else {
                 $item->long = null;
             }
+            if (isset($isi->sender) == true) {
+                $item->pengirim = $isi->sender->from;
+            } else {
+                $item->pengirim = null;
+            }
 
             return $item;
         });
