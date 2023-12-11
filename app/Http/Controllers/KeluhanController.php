@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\KeluhanWA;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 
 class KeluhanController extends Controller
@@ -51,6 +53,7 @@ class KeluhanController extends Controller
 
         KeluhanWA::find($id)->update(['status' => 1]);
         $pesan = json_decode($find->isi);
+
         if ($nomor == null) {
             toastr()->success('Berhasil diubah,namun nomor pelapor tidak ditemukan, tidak bisa mengirim notif');
             return back();
@@ -59,13 +62,12 @@ class KeluhanController extends Controller
                 "phoneNumber" => $nomor,
                 "content" => [
                     "text" => Carbon::now()->translatedFormat('d F Y') .
-                        " SIPADU, KELUHAN ANDA, \n Nama : " . $pesan->nama . " \n Keluhan : " . $pesan->complaint . " \n Sedang Diproses",
+                        " SIPADU, KELUHAN ANDA, \n Nama : " . $pesan->name . " \n Keluhan : " . $pesan->complaint . " \n Sedang Diproses",
                 ]
             ];
 
             $response = Http::withBody(json_encode($data), 'application/json')
                 ->post('https://bot.sipadu.banjarmasinkota.go.id/message');
-            sleep(5);
 
             toastr()->success('Berhasil diubah');
             return back();
@@ -73,9 +75,36 @@ class KeluhanController extends Controller
     }
     public function selesai($id)
     {
+
+        $find = KeluhanWA::find($id);
+        $sender = json_decode($find->isi);
+        if (isset($sender->sender) == true) {
+            $nomor = $sender->sender->from;
+        } else {
+            $nomor = null;
+        }
+
         KeluhanWA::find($id)->update(['status' => 2]);
-        toastr()->success('Berhasil diubah');
-        return back();
+        $pesan = json_decode($find->isi);
+
+        if ($nomor == null) {
+            toastr()->success('Berhasil diubah,namun nomor pelapor tidak ditemukan, tidak bisa mengirim notif');
+            return back();
+        } else {
+            $data = [
+                "phoneNumber" => $nomor,
+                "content" => [
+                    "text" => Carbon::now()->translatedFormat('d F Y') .
+                        " SIPADU, KELUHAN ANDA, \n Nama : " . $pesan->name . " \n Keluhan : " . $pesan->complaint . " \n Sudah Selesai, \n Foto : https://sipadu.banjarmasinkota.go.id/storage/foto/" . $pesan->file,
+                ]
+            ];
+
+            $response = Http::withBody(json_encode($data), 'application/json')
+                ->post('https://bot.sipadu.banjarmasinkota.go.id/message');
+
+            toastr()->success('Berhasil diubah');
+            return back();
+        }
     }
     public function keluhanwa()
     {
