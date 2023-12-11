@@ -26,9 +26,9 @@ class WAcontroller extends Controller
 
             $response = Http::withBody(json_encode($data), 'application/json')
                 ->post('https://bot.sipadu.banjarmasinkota.go.id/message');
+            sleep(5);
         }
         toastr()->success(' Berhasil Di Kirim');
         return back();
-        dd($nomor);
     }
 }
