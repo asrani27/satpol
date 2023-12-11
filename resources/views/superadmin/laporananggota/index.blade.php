@@ -40,7 +40,7 @@
                         <tr>
                             <td>{{$no++}}</td>
                             <td>{{$item->created_at}}</td>
-                            <td>{{$item->nik}}</td>
+                            <td>{{$item->nik}} <br/>{{$item->nama}}</td>
                             <td>{{$item->pengirim}}</td>
                             <td>{{$item->rincian}}</td>
                             <td>{{$item->alamat}}</td>
