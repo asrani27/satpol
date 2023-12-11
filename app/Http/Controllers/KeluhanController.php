@@ -27,7 +27,7 @@ class KeluhanController extends Controller
         }
 
         if ($req->hasFile('file')) {
-            $filename = $req->file->getClientOriginalName();
+            $filename = str_replace(" ", "_", $req->file->getClientOriginalName());
             $filename = date('d-m-Y-') . rand(1, 9999) . $filename;
             $req->file->storeAs('/public/foto', $filename);
         } else {
