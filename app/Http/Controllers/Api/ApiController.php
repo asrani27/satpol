@@ -20,15 +20,20 @@ class ApiController extends Controller
 
     public function storeLaporanAnggota(Request $req)
     {
-        $n = new LaporanAnggota;
-        $n->nik = $req->nik;
-        $n->rincian = $req->rincian;
-        $n->alamat = $req->alamat;
-        $n->foto = $req->foto;
-        $n->save();
+        if (Pegawai::where('nik', $req->nik)->first() == null) {
+            $pesan = 'NIK anggota tidak ditemukan';
+            return response()->json($pesan);
+        } else {
+            $n = new LaporanAnggota;
+            $n->nik = $req->nik;
+            $n->rincian = $req->rincian;
+            $n->alamat = $req->alamat;
+            $n->foto = $req->foto;
+            $n->save();
 
-        $pesan = 'Laporan telah disimpan';
-        return response()->json($pesan);
+            $pesan = 'Laporan telah disimpan';
+            return response()->json($pesan);
+        }
     }
     public function checkkeluhan($nomor)
     {
