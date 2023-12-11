@@ -66,6 +66,14 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/pengamanan" class="nav-link {{Request::is('pengamanan*') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-list"></i>
+                <p>
+                   PENGAMANAN BARANG
+                </p>
+            </a>
+        </li>
 
         <li class="nav-item">
             <a href="/berita" class="nav-link {{Request::is('berita*') ? 'active' : ''}}">
