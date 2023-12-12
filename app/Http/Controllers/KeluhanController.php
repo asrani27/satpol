@@ -39,7 +39,7 @@ class KeluhanController extends Controller
                 "phoneNumber" => $pegawai->telp,
                 "content" => [
                     "text" => Carbon::now()->translatedFormat('d F Y') .
-                        " SIPADU, KELUHAN BARU, \n Nama : " . $pesan->name . "(" . $pesan->pengirim . ")" . " \n Keluhan : " . $pesan->isikeluhan . " \n Kec : " . $pesan->kecamatan . "\n Kel : " . $pesan->kelurahan . "",
+                        " SIPADU, KELUHAN BARU, \n Nama : " . $pesan->nama . "(" . $pesan->pengirim . ")" . " \n Keluhan : " . $pesan->isikeluhan . " \n Kec : " . $pesan->kecamatan . "\n Kel : " . $pesan->kelurahan . "",
                 ]
             ];
 
