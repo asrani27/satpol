@@ -97,7 +97,7 @@
                                           <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <div class="dropdown-menu" role="menu" style="">
-                                            <a class="dropdown-item btn-xs" href="#"><i class="fas fa-comments"></i> Kirim Ke Petugas</a>
+                                            <a class="dropdown-item btn-xs" href="/data/keluhanwa/kepetugas/{{$item->id}}"><i class="fas fa-comments"></i> Kirim Ke Petugas</a>
                                             <a class="dropdown-item btn-xs" href="/kirimkeatasan/{{$item->id}}"  onclick="return confirm('yakin mengirim pesan ke WA atasan?');"><i class="fas fa-phone"></i> Kirim Ke WA Atasan</a>
                                           <div class="dropdown-divider"></div>
                                           <a class="dropdown-item btn-xs" href="#"><strong>Ubah Status :</strong></a>

@@ -106,6 +106,8 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('/data/masuk', [DataMasukController::class, 'index']);
     Route::get('/laporan', [LaporanController::class, 'index']);
     Route::get('/data/keluhanwa', [KeluhanController::class, 'keluhanwa']);
+    Route::get('/data/keluhanwa/kepetugas/{id}', [KeluhanController::class, 'kepetugas']);
+    Route::post('/data/keluhanwa/kepetugas/{id}/kirim', [KeluhanController::class, 'kirimkepetugas']);
     Route::post('/data/keluhanwa/uploadbukti', [KeluhanController::class, 'uploadbukti']);
     Route::get('/data/keluhanwa/delete/{id}', [KeluhanController::class, 'delete']);
     Route::get('/data/keluhanwa/ubahstatusbaru/{id}', [KeluhanController::class, 'baru']);

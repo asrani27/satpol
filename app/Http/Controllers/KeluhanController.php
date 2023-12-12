@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Pegawai;
 use App\Models\KeluhanWA;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -16,6 +17,38 @@ class KeluhanController extends Controller
         KeluhanWA::find($id)->update(['status' => 0]);
         toastr()->success('Berhasil diubah');
         return back();
+    }
+
+    public function kepetugas($id)
+    {
+        $data = KeluhanWA::find($id);
+        $pegawai = Pegawai::get();
+        return view('superadmin.keluhanwa.kepetugas', compact('pegawai', 'data'));
+    }
+
+    public function kirimkepetugas(Request $req, $id)
+    {
+        $data = KeluhanWA::where('id', $id)->get();
+        $pegawai = Pegawai::find($req->pegawai_id);
+        $pesan = format_pesan($data)->first();
+        if ($pegawai->telp == null) {
+            toastr()->success(',namun nomor pelapor tidak ditemukan, tidak bisa mengirim notif');
+            return back();
+        } else {
+            $data = [
+                "phoneNumber" => $pegawai->telp,
+                "content" => [
+                    "text" => Carbon::now()->translatedFormat('d F Y') .
+                        " SIPADU, KELUHAN BARU, \n Nama : " . $pesan->name . "(" . $pesan->pengirim . ")" . " \n Keluhan : " . $pesan->isikeluhan . " \n Kec : " . $pesan->kecamatan . "\n Kel : " . $pesan->kelurahan . "",
+                ]
+            ];
+
+            $response = Http::withBody(json_encode($data), 'application/json')
+                ->post('https://bot.sipadu.banjarmasinkota.go.id/message');
+
+            toastr()->success('Berhasil diubah');
+            return back();
+        }
     }
     public function uploadbukti(Request $req)
     {
