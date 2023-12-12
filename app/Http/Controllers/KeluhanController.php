@@ -32,7 +32,7 @@ class KeluhanController extends Controller
         $pegawai = Pegawai::find($req->pegawai_id);
         $pesan = format_pesan($data)->first();
         if ($pegawai->telp == null) {
-            toastr()->success(',namun nomor pelapor tidak ditemukan, tidak bisa mengirim notif');
+            toastr()->success(' nomor pelapor tidak ditemukan, tidak bisa mengirim notif');
             return back();
         } else {
             $data = [
@@ -46,7 +46,7 @@ class KeluhanController extends Controller
             $response = Http::withBody(json_encode($data), 'application/json')
                 ->post('https://bot.sipadu.banjarmasinkota.go.id/message');
 
-            toastr()->success('Berhasil diubah');
+            toastr()->success('Berhasil Dikirim');
             return back();
         }
     }
