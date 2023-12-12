@@ -16,7 +16,7 @@ TAMBAH SATUAN
                 <div class="col-lg-12 col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">DATA nomor</h3>
+                            <h3 class="card-title">DATA PETUGAS</h3>
                             <div class="card-tools">
                                 <a href="/data/keluhanwa" type="button" class="btn bg-gradient-secondary btn-sm">
                                     <i class="fa fa-arrow-left"></i> Kembali</a>
@@ -38,7 +38,7 @@ TAMBAH SATUAN
                             <label class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-block bg-gradient-secondary"><strong><i
-                                            class="fa fa-send"></i> KIRIM</strong></button>
+                                            class="fa fa-send"></i> KIRIM PESAN</strong></button>
                             </div>
                           </div>
                         </div>
